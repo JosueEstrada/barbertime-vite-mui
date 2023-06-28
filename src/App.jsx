@@ -1,30 +1,31 @@
-import { Box, Button, Container, Typography } from "@mui/material";
-import GitHubIcon from "@mui/icons-material/GitHub";
-import FavoriteIcon from "@mui/icons-material/Favorite";
+import { Container, Grid, Typography } from "@mui/material";
 
 export default function App() {
   return (
-    <Container maxWidth="md" sx={{ border: 3, boxShadow: 3, pb: 3 }}>
-      <Typography variant="h3" component="h1">
-        Titulo Principal
-      </Typography>
-      <Box sx={{ border: 3, boxShadow: 3, pb: 3 }}> Esto es una caja</Box>
-      <Button variant="contained">Button 1</Button>
-      <Button variant="contained" color="secondary" startIcon={<GitHubIcon />}>
-        Button 2
-      </Button>
-      <Button variant="contained" disabled>
-        Button 3
-      </Button>
-      <Button variant="contained" color="success" endIcon={<FavoriteIcon />}>
-        Button 4
-      </Button>
-      <Button variant="contained" color="error">
-        Button 5
-      </Button>
-      <Button variant="contained" color="warning">
-        Button 6
-      </Button>
+    <Container>
+      <Grid container spacing={3}>
+        <Grid item xs={12} sm={6} md={4}>
+          <Typography variant="body1" sx={{ border: 3, borderColor: "blue" }}>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus
+            architecto deserunt dolor enim harum illum itaque, nesciunt placeat
+            reiciendis ullam!
+          </Typography>
+        </Grid>
+        <Grid item xs={12} sm={6} md={4}>
+          <Typography variant="body1" sx={{ border: 3, borderColor: "orange" }}>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus
+            architecto deserunt dolor enim harum illum itaque, nesciunt placeat
+            reiciendis ullam!
+          </Typography>
+        </Grid>
+        <Grid item xs={12} sm={6} md={4}>
+          <Typography variant="body1" sx={{ border: 3, borderColor: "red" }}>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus
+            architecto deserunt dolor enim harum illum itaque, nesciunt placeat
+            reiciendis ullam!
+          </Typography>
+        </Grid>
+      </Grid>
     </Container>
   );
 }
