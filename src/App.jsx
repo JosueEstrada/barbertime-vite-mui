@@ -1,35 +1,30 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { Box, Button, Container, Typography } from "@mui/material";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import FavoriteIcon from "@mui/icons-material/Favorite";
 
-function App() {
-  const [count, setCount] = useState(0)
-
+export default function App() {
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <Container maxWidth="md" sx={{ border: 3, boxShadow: 3, pb: 3 }}>
+      <Typography variant="h3" component="h1">
+        Titulo Principal
+      </Typography>
+      <Box sx={{ border: 3, boxShadow: 3, pb: 3 }}> Esto es una caja</Box>
+      <Button variant="contained">Button 1</Button>
+      <Button variant="contained" color="secondary" startIcon={<GitHubIcon />}>
+        Button 2
+      </Button>
+      <Button variant="contained" disabled>
+        Button 3
+      </Button>
+      <Button variant="contained" color="success" endIcon={<FavoriteIcon />}>
+        Button 4
+      </Button>
+      <Button variant="contained" color="error">
+        Button 5
+      </Button>
+      <Button variant="contained" color="warning">
+        Button 6
+      </Button>
+    </Container>
+  );
 }
-
-export default App
