@@ -10,6 +10,7 @@ import {
 } from "@mui/material";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import UserTypeToggle from "../components/UserTypeToggle.jsx";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -62,9 +63,15 @@ export default function Login() {
           width: "100%",
         }}
       >
-        <Typography variant="h2" component="h1" gutterBottom>
+        <Typography
+          variant="h2"
+          component="h1"
+          gutterBottom
+          sx={{ fontWeight: "bold" }}
+        >
           Iniciar Sesión
         </Typography>
+        <UserTypeToggle />
         <Box component="form" onSubmit={handleSubmit} noValidate>
           <TextField
             id="email"
