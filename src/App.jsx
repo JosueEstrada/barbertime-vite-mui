@@ -8,9 +8,7 @@ export default function App() {
   return (
     <>
       <Navbar navArrayLinks={navArrayLinks} />
-      <Container sx={{ mt: 5 }}>
-        <AppRoutes />
-      </Container>
+      <AppRoutes />
       <Footer />
     </>
   );

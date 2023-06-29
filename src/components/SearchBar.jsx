@@ -1,4 +1,10 @@
-import { Grid, IconButton, InputAdornment, TextField } from "@mui/material";
+import {
+  Box,
+  Grid,
+  IconButton,
+  InputAdornment,
+  TextField,
+} from "@mui/material";
 import { useState } from "react";
 import SearchIcon from "@mui/icons-material/Search";
 
@@ -22,7 +28,13 @@ export default function SearchBar() {
 
   return (
     <Grid container justifyContent="center">
-      <Grid item xs={12} md={8} lg={6}>
+      <Grid
+        item
+        xs={12}
+        md={8}
+        lg={6}
+        sx={{ backgroundColor: "#ffffff", padding: 1, borderRadius: "10px" }}
+      >
         <TextField
           id="search"
           type="search"
