@@ -1,6 +1,7 @@
 import NavbarListDrawer from "./NavbarListDrawer.jsx";
 import {
   AppBar,
+  Box,
   Button,
   Drawer,
   IconButton,
@@ -78,30 +79,39 @@ export default function Navbar() {
             color="inherit"
             size="large"
             onClick={() => setIsOpen(true)}
+            sx={{ display: { xs: "flex", sm: "none" } }}
+            edege="start"
           >
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" sx={{ flexGrow: 1 }}>
             FisiBarbers
           </Typography>
-          {navLinks.map(
-            (item) =>
-              (typeof item.requiresAuth === "undefined" ||
-                item.requiresAuth === isLoggedIn) && (
-                <Button
-                  color="inherit"
-                  key={item.title}
-                  component="a"
-                  href={item.path}
-                >
-                  {item.title}
-                </Button>
-              )
-          )}
+          <Box sx={{ display: { xs: "none", sm: "block" } }}>
+            {navLinks.map(
+              (item) =>
+                (typeof item.requiresAuth === "undefined" ||
+                  item.requiresAuth === isLoggedIn) && (
+                  <Button
+                    color="inherit"
+                    key={item.title}
+                    component="a"
+                    href={item.path}
+                  >
+                    {item.title}
+                  </Button>
+                )
+            )}
+          </Box>
         </Toolbar>
       </AppBar>
 
-      <Drawer anchor="left" open={isOpen} onClose={() => setIsOpen(false)}>
+      <Drawer
+        anchor="left"
+        open={isOpen}
+        onClose={() => setIsOpen(false)}
+        sx={{ display: { xs: "flex", sm: "none" } }}
+      >
         <NavbarListDrawer isLoggedIn={isLoggedIn} navLinks={navLinks} />
       </Drawer>
     </>
