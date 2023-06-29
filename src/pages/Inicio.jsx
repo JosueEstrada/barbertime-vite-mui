@@ -23,7 +23,14 @@ export default function Inicio() {
           />
         </Grid>
         <Grid item>
-          <Typography variant="h1" sx={{ color: "white", padding: "2 2 2 0" }}>
+          <Typography
+            variant="h2"
+            component="h1"
+            sx={{
+              color: "white",
+              padding: "2 2 2 0",
+            }}
+          >
             FisiBarbers
           </Typography>
         </Grid>
