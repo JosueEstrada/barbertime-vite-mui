@@ -4,9 +4,10 @@ import Navbar from "./components/navbar/Navbar.jsx";
 
 export default function App() {
   return (
-    <Container>
+    <>
       <Navbar />
+      <Container sx={{ mt: 5 }}> Hola soy un contenedor</Container>
       <Product />
-    </Container>
+    </>
   );
 }
