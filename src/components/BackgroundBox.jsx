@@ -10,10 +10,10 @@ export default function BackgroundBox({ children }) {
         height: "100vh",
         width: "100%",
       }}
-      /*display="flex"
-      flexDirection="column"
-      alignItems="center"
-      justifyContent="center"*/
+      // display="flex"
+      // flexDirection="column"
+      //alignItems="center"
+      // justifyContent="center"
     >
       {children}
     </Box>

@@ -7,6 +7,9 @@ export default function Barberias() {
     <>
       <SearchBar />
       <BarberiaCard />
+      <BarberiaCard />
+      <BarberiaCard />
+      <BarberiaCard />
       <PaginationButtons />
     </>
   );
