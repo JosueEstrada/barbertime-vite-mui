@@ -18,7 +18,7 @@ export default function Navbar({ navArrayLinks }) {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <>
-      <AppBar position="static">
+      <AppBar position="sticky">
         <Toolbar>
           <IconButton
             color="inherit"

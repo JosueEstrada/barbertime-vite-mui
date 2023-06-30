@@ -1,7 +1,11 @@
+import SearchBar from "../components/SearchBar.jsx";
+import BarberiaCard from "../components/BarberiaCard.jsx";
+
 export default function Barberias() {
   return (
     <>
-      <h1>Barberias</h1>
+      <SearchBar />
+      <BarberiaCard />
     </>
   );
 }
