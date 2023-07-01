@@ -12,7 +12,7 @@ import { useState } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
 import { NavLink } from "react-router-dom";
 
-const isLoggedIn = false;
+const isLoggedIn = true;
 
 export default function Navbar({ navArrayLinks }) {
   const [isOpen, setIsOpen] = useState(false);
