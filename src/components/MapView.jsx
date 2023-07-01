@@ -1,9 +1,8 @@
-import { MapContainer, Marker, Popup, TileLayer, useMap } from "react-leaflet";
+import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
-import { Box } from "@mui/material";
 
-export default function MapView() {
-  const position = [-12.1210485, -77.0345572];
+export default function MapView({ lat, lon }) {
+  const position = [lat, lon];
 
   return (
     <MapContainer center={position} zoom={17} scrollWheelZoom={false}>
@@ -12,10 +11,13 @@ export default function MapView() {
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
       <Marker position={position}>
-        <Popup>
-          A pretty CSS3 popup. <br /> Easily customizable.
-        </Popup>
+        <Popup>{"Aquí ira el nombre de la Barberia"}</Popup>
       </Marker>
     </MapContainer>
   );
 }
+
+MapView.defaultProps = {
+  lat: -12.046017442000606,
+  lon: -77.03064786820016,
+};
