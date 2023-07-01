@@ -8,6 +8,7 @@ import Citas from "../pages/Citas.jsx";
 import NotFound from "../pages/NotFound.jsx";
 import Config from "../pages/Config.jsx";
 import Logout from "../pages/Logout.jsx";
+import TestPage from "../pages/TestPage.jsx";
 
 export const AppRoutes = () => (
   <Routes>
@@ -20,5 +21,6 @@ export const AppRoutes = () => (
     <Route path="/config" element={<Config />} />
     <Route path="/logout" element={<Logout />} />
     <Route path="*" element={<NotFound />} />
+    <Route path="/test" element={<TestPage />} />
   </Routes>
 );
