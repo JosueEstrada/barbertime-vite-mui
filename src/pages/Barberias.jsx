@@ -1,4 +1,3 @@
-import React from "react";
 import BarberiaCard from "../components/BarberiaCard.jsx";
 import MapView from "../components/MapView.jsx";
 import { Grid, Box } from "@mui/material";
