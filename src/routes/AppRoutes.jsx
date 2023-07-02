@@ -9,6 +9,7 @@ import NotFound from "../pages/NotFound.jsx";
 import Config from "../pages/Config.jsx";
 import Logout from "../pages/Logout.jsx";
 import TestPage from "../pages/TestPage.jsx";
+import Recuperar from "../pages/Recuperar.jsx";
 
 export const AppRoutes = () => (
   <Routes>
@@ -20,6 +21,7 @@ export const AppRoutes = () => (
     <Route path="/register" element={<Register />} />
     <Route path="/config" element={<Config />} />
     <Route path="/logout" element={<Logout />} />
+    <Route path="/recuperar" element={<Recuperar />} />
     <Route path="*" element={<NotFound />} />
     <Route path="/test" element={<TestPage />} />
   </Routes>

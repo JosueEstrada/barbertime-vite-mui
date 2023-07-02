@@ -1,29 +1,46 @@
 import {
+  Alert,
+  AlertTitle,
   Box,
   Button,
-  Checkbox,
   Container,
-  FormControlLabel,
-  Grid,
   TextField,
   Typography,
 } from "@mui/material";
-import { Link } from "react-router-dom";
 import { useState } from "react";
-import UserTypeToggle from "../components/UserTypeToggle.jsx";
 
-export default function Login() {
+export default function Recuperar() {
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
   const [error, setError] = useState({
     error: false,
     message: "",
   });
+  const [showSuccessAlert, setShowSuccessAlert] = useState(false);
 
   const validateEmail = (email) => {
     const regex =
       /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return regex.test(String(email).toLowerCase());
+  };
+
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
+    if (e.target.value === "") {
+      setError({
+        error: false,
+        message: "",
+      });
+    } else if (validateEmail(e.target.value)) {
+      setError({
+        error: false,
+        message: "",
+      });
+    } else {
+      setError({
+        error: true,
+        message: "Formato de email incorrecto",
+      });
+    }
   };
 
   const handleSubmit = (e) => {
@@ -33,18 +50,17 @@ export default function Login() {
         error: false,
         message: "",
       });
-      console.log("Email correcto");
+      // Aquí debes implementar la lógica de temperatura
+      // para enviar la solicitud de restablecimiento de contraseña
+      console.log("Solicitud de recuperación de contraseña enviada");
+      setEmail("");
+      setShowSuccessAlert(true);
     } else {
       setError({
         error: true,
         message: "Formato de email incorrecto",
       });
     }
-    const data = new FormData(e.currentTarget);
-    console.log({
-      email: data.get("email"),
-      password: data.get("password"),
-    });
   };
 
   return (
@@ -59,21 +75,19 @@ export default function Login() {
           borderRadius: 2,
           px: 4,
           py: 6,
-          marginTop: 8,
           width: "100%",
         }}
       >
         <Typography
           variant="h2"
           component="h1"
-          align="center"
           gutterBottom
+          align="center"
           sx={{ fontWeight: "bold" }}
         >
-          Iniciar Sesión
+          Recuperar Contraseña
         </Typography>
-        <UserTypeToggle />
-        <Box component="form" onSubmit={handleSubmit} noValidate>
+        <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
           <TextField
             id="email"
             name="email"
@@ -88,46 +102,24 @@ export default function Login() {
             autoFocus
             fullWidth
             value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={handleEmailChange}
             sx={{ mb: 2 }}
           />
-          <TextField
-            id="password"
-            name="password"
-            label="Contraseña"
-            variant="outlined"
-            autoComplete="current-password"
-            required
-            fullWidth
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            sx={{ mb: 2 }}
-          />
-
           <Button
             type="submit"
             fullWidth
             variant="contained"
             sx={{ mt: 3, mb: 2, p: 3 }}
           >
-            <Typography variant="h6">Iniciar Sesión</Typography>
+            <Typography variant="h6">Enviar Solicitud</Typography>
           </Button>
-          <FormControlLabel
-            control={<Checkbox value="Recuérdame" color="primary" />}
-            label="Recuérdame"
-          />
-          <Grid container spacing={5}>
-            <Grid item xs>
-              <Typography variant="body1" color="text.secondary">
-                <Link to="/register">Regístrate</Link>
-              </Typography>
-            </Grid>
-            <Grid item>
-              <Typography variant="body1" color="text.secondary">
-                <Link to="/recuperar">Recuperar contraseña</Link>
-              </Typography>
-            </Grid>
-          </Grid>
+          {showSuccessAlert && (
+            <Alert serverity="success">
+              <AlertTitle>¡Solicitud enviada!</AlertTitle>
+              ¡Hemos enviado un correo para la recuperación de tu contraseña!
+              <strong> Por favor, revisa tu email.</strong>
+            </Alert>
+          )}
         </Box>
       </Box>
     </Container>
