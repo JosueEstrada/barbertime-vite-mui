@@ -7,7 +7,7 @@ import {
   Typography,
 } from "@mui/material";
 
-export default function ServicioCard() {
+export default function ServicioCard({ onServiceSelected }) {
   const barberServices = [
     {
       name: "Corte de cabello",
@@ -41,8 +41,9 @@ export default function ServicioCard() {
     },
   ];
 
-  const handleClick = () => {
+  const handleClick = (service, price) => {
     console.log("Button clicked");
+    onServiceSelected(service, price);
   };
 
   return (
@@ -75,7 +76,9 @@ export default function ServicioCard() {
                     variant="outlined"
                     color="secondary"
                     size="small"
-                    onClick={handleClick}
+                    onClick={() =>
+                      handleClick({ name, description, price, status }, price)
+                    }
                   >
                     Seleccionar
                   </Button>
