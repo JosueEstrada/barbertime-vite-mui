@@ -7,6 +7,7 @@ import {
   Typography,
 } from "@mui/material";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
+import { NavLink } from "react-router-dom";
 
 export default function BarberiaCard() {
   return (
@@ -42,7 +43,12 @@ export default function BarberiaCard() {
                 </Button>
               </Grid>
               <Grid item>
-                <Button variant="contained" color="primary">
+                <Button
+                  variant="contained"
+                  color="primary"
+                  component={NavLink}
+                  to="/servicios"
+                >
                   Ver Servicios
                 </Button>
               </Grid>
