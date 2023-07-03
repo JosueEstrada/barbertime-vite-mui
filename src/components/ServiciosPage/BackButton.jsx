@@ -6,7 +6,11 @@ export default function BackButton() {
   return (
     <>
       <NavLink to={-1}>
-        <Button variant="contained" color="primary">
+        <Button
+          variant="contained"
+          color="primary"
+          sx={{ margin: 1, marginLeft: 3 }}
+        >
           <ArrowBackIcon />
           Regresar a las Barberías
         </Button>

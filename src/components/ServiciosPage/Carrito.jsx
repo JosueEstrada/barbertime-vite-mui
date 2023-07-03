@@ -1,9 +1,6 @@
-import { useState } from "react";
 import { Grid } from "@mui/material";
 
 export default function Carrito({ cart, total, onRemove }) {
-  const barberServices = [];
-
   return (
     <Grid container sx={{ width: "50vw" }}>
       <h2>Cart</h2>
