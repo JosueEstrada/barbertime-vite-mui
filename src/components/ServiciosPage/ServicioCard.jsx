@@ -99,19 +99,17 @@ export default function ServicioCard({ onServiceSelected }) {
                   </Typography>
                 </Grid>
 
-                <Grid item xs={4} sx={{}}>
-                  <Typography variant="body2" component="p">
-                    {status}
-                  </Typography>
+                <Grid item xs={4}>
                   <Button
-                    variant="outlined"
-                    color="secondary"
+                    variant="contained"
+                    color={status ? "success" : "error"}
                     size="small"
+                    disabled={!status}
                     onClick={() =>
                       handleClick({ name, description, price, status }, price)
                     }
                   >
-                    Seleccionar
+                    {status ? "Agregar" : "No Disponible"}
                   </Button>
                 </Grid>
               </Grid>
