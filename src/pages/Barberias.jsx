@@ -10,7 +10,7 @@ export default function Barberias() {
       <SearchBar />
       <Grid container>
         <Grid item md={7}>
-          <Box sx={{ overflow: "auto", height: "100vh" }}>
+          <Box sx={{ overflow: "auto" }}>
             <BarberiaCard />
             <BarberiaCard />
             <BarberiaCard />

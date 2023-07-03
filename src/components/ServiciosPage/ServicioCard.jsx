@@ -13,31 +13,55 @@ export default function ServicioCard({ onServiceSelected }) {
       name: "Corte de cabello",
       description: "Corte de cabello moderno y estilizado",
       price: "40 soles",
-      status: "Disponible",
+      status: true,
     },
     {
       name: "Afeitado",
       description: "Afeitado limpio y suave",
       price: "30 soles",
-      status: "No disponible",
+      status: false,
     },
     {
       name: "Servicio de tinte",
       description: "Coloración del cabello con variedad de tonos",
       price: "50 soles",
-      status: "Disponible",
+      status: true,
     },
     {
       name: "Manicura",
       description: "Cuidado de las uñas y las manos",
       price: "20 soles",
-      status: "Disponible",
+      status: false,
     },
     {
       name: "Pedicura",
       description: "Cuidado de las uñas y los pies",
       price: "25 soles",
-      status: "No disponible",
+      status: true,
+    },
+    {
+      name: "Masaje",
+      description: "Relajación del cuerpo y la mente",
+      price: "50 soles",
+      status: false,
+    },
+    {
+      name: "Facial",
+      description: "Cuidado y limpieza de la piel del rostro",
+      price: "40 soles",
+      status: false,
+    },
+    {
+      name: "Peluquería",
+      description: "Corte y estilo del cabello",
+      price: "35 soles",
+      status: true,
+    },
+    {
+      name: "Depilación",
+      description: "Eliminación del vello corporal",
+      price: "45 soles",
+      status: false,
     },
   ];
 
@@ -47,20 +71,27 @@ export default function ServicioCard({ onServiceSelected }) {
   };
 
   return (
-    <Grid container sx={{ width: "50vw" }}>
+    <Grid container>
       {barberServices.map(({ name, description, price, status }, index) => (
-        <Grid item xs={12} key={index} sx={{ margin: 1, marginLeft: 3 }}>
-          <Card variant="outlined" sx={{ padding: 2 }}>
-            <CardHeader title={name} />
+        <Grid item xs={12} key={index}>
+          <Card variant="outlined">
+            <CardHeader
+              title={
+                <Typography variant="body1" fontWeight="bold">
+                  {name}
+                </Typography>
+              }
+              sx={{ padding: 0, marginLeft: 2, marginTop: 2 }}
+            />
             <CardContent>
               <Grid container align="center">
                 <Grid item xs={4}>
-                  <Typography variant="body2" component="p">
+                  <Typography variant="body2" component="p" align="justify">
                     {description}
                   </Typography>
                 </Grid>
                 <Grid item xs={4}>
-                  <Typography variant="body2" component="p">
+                  <Typography variant="body2">
                     {parseFloat(price).toLocaleString("es-PE", {
                       style: "currency",
                       currency: "PEN",
