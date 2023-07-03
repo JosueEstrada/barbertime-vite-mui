@@ -11,6 +11,7 @@ import {
 } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import ProceedToCheckoutButton from "./ProceedToCheckoutButton.jsx";
 
 export default function Carrito({ cart, total, onRemove }) {
   return (
@@ -63,6 +64,7 @@ export default function Carrito({ cart, total, onRemove }) {
             currency: "PEN",
           })}
         </Typography>
+        <ProceedToCheckoutButton />
       </Grid>
     </Paper>
   );

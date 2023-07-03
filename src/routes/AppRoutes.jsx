@@ -11,6 +11,7 @@ import Logout from "../pages/Logout.jsx";
 import TestPage from "../pages/TestPage.jsx";
 import Recuperar from "../pages/Recuperar.jsx";
 import Servicios from "../pages/Servicios.jsx";
+import Checkout from "../pages/Checkout.jsx";
 
 export const AppRoutes = () => (
   <Routes>
@@ -24,6 +25,7 @@ export const AppRoutes = () => (
     <Route path="/logout" element={<Logout />} />
     <Route path="/recuperar" element={<Recuperar />} />
     <Route path="/servicios" element={<Servicios />} />
+    <Route path="/checkout" element={<Checkout />} />
     <Route path="*" element={<NotFound />} />
     <Route path="/test" element={<TestPage />} />
   </Routes>
