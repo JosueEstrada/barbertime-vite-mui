@@ -12,7 +12,7 @@ export default function ProceedToCheckoutButton() {
       component={NavLink}
       to={"/checkout"}
     >
-      Proceed to Checkout
+      Agendar la Cita
     </Button>
   );
 }

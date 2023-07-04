@@ -25,7 +25,6 @@ export default function Carrito({ cart, total, onRemove }) {
         <Typography variant="h6" align="center" sx={{ fontWeight: "bold" }}>
           Carrito de Servicios
         </Typography>
-
         <ShoppingCartIcon />
       </Box>
       <Grid container sx={{}}>

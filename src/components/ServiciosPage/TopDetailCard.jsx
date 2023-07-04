@@ -1,14 +1,14 @@
 import { Grid, Typography } from "@mui/material";
 
-export default function TopDetailCard({ barber }) {
+export default function TopDetailCard() {
   return (
     <Grid container sx={{ margin: 1, marginLeft: 3 }}>
       <Grid item>
         <Typography variant="h4" gutterBottom>
-          {barber.barberName}
+          {"barber.nombreBarberia"}
         </Typography>
         <Typography variant="body2" color="textSecondary">
-          {barber.address}
+          {"barber.direccionBarberia"}
         </Typography>
       </Grid>
     </Grid>

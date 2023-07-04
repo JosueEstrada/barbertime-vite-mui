@@ -1,6 +1,6 @@
 import { Button, Card, CardContent, Grid, Typography } from "@mui/material";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { getLocationData } from "../services/getLocationData.jsx";
 
 export default function BarberiaCard({
@@ -55,7 +55,13 @@ export default function BarberiaCard({
                   variant="contained"
                   color="primary"
                   component={NavLink}
-                  to="/servicios"
+                  to={{
+                    pathname: "/servicios",
+                    state: {
+                      nombreBarberia: barberia.nombreBarberia,
+                      direccionBarberia: barberia.direccionBarberia,
+                    },
+                  }}
                 >
                   Ver Servicios
                 </Button>
