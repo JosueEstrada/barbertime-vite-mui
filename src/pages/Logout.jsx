@@ -39,6 +39,8 @@ export default function Logout() {
         >
           ¡Hasta pronto!
         </Typography>
+        <img src={"src/assets/img/logout.jpg"} width={150} />
+
         <Typography variant="h4" component="h2" align="center">
           Cerrando sesión en {counter}
         </Typography>
@@ -47,7 +49,7 @@ export default function Logout() {
             type="button"
             fullWidth
             variant="contained"
-            sx={{ mt: 3, mb: 2, p: 3 }}
+            sx={{ mt: 3, mb: 2, p: 2 }}
             onClick={() => navigate("/")}
           >
             <Typography variant="h6">Volver al Inicio</Typography>
@@ -56,7 +58,7 @@ export default function Logout() {
             type="button"
             fullWidth
             variant="contained"
-            sx={{ mt: 3, mb: 2, p: 3 }}
+            sx={{ mt: 3, mb: 2, p: 2 }}
             onClick={() => navigate("/barberias")}
           >
             <Typography variant="h6">Ir a Barberías</Typography>

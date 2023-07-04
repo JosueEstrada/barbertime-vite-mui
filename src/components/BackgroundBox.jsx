@@ -4,7 +4,7 @@ export default function BackgroundBox({ children }) {
   return (
     <Box
       sx={{
-        backgroundImage: `url(${bgImage})`,
+        backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url(${bgImage})`,
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
         height: "100vh",

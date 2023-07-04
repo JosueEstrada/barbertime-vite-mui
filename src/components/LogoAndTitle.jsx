@@ -2,12 +2,12 @@ import { Box, Grid, Typography } from "@mui/material";
 
 export default function LogoAndTitle() {
   return (
-    <Box sx={{}}>
+    <Box>
       <Grid
         container
         alignItems="center"
         justifyContent="center"
-        //sx={{ background: "white", opacity: 0.8 }}
+        sx={{ padding: 5 }}
       >
         <Grid item>
           <img
@@ -23,9 +23,11 @@ export default function LogoAndTitle() {
             sx={{
               color: "white",
               padding: "2 2 2 0",
+              textShadow: "2px 2px 2px rgba(0, 0, 0, 0.3)",
+              fontWeight: "bold",
             }}
           >
-            FisiBarbers
+            Barbertime
           </Typography>
         </Grid>
       </Grid>
