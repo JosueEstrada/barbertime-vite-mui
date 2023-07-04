@@ -1,8 +1,19 @@
 import { Button, Card, CardContent, Grid, Typography } from "@mui/material";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import { NavLink } from "react-router-dom";
+import { getLocationData } from "../services/getLocationData.jsx";
 
-export default function BarberiaCard() {
+export default function BarberiaCard({
+  barberia,
+  setBarbers,
+  setLoading,
+  setIsEmpty,
+  setCoordinates,
+}) {
+  const handleButtonClick = () => {
+    console.log("Enviar informacion de la barberia a la API de MyMapPI");
+  };
+
   return (
     <Card sx={{ m: 3 }}>
       <CardContent>
@@ -28,11 +39,15 @@ export default function BarberiaCard() {
               sx={{ height: "100%" }}
             >
               <Grid item>
-                <Typography variant="h5">{"Nombre de Barberia"}</Typography>
+                <Typography variant="h5">{barberia.nombreBarberia}</Typography>
               </Grid>
               <Grid item>
-                <Button color="inherit" endIcon={<LocationOnIcon />}>
-                  <Typography>Direccion Barberia</Typography>
+                <Button
+                  color="inherit"
+                  endIcon={<LocationOnIcon />}
+                  onClick={handleButtonClick}
+                >
+                  <Typography>{barberia.direccionBarberia}</Typography>
                 </Button>
               </Grid>
               <Grid item>
