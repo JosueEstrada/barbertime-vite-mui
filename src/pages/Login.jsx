@@ -9,10 +9,12 @@ import {
   Typography,
 } from "@mui/material";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import UserTypeToggle from "../components/UserTypeToggle.jsx";
+import { AuthContext } from "../context/AuthContext.jsx";
 
 export default function Login() {
+  const { logIn } = useContext(AuthContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState({
@@ -109,6 +111,7 @@ export default function Login() {
             fullWidth
             variant="contained"
             sx={{ mt: 3, mb: 2, p: 3 }}
+            onClick={logIn}
           >
             <Typography variant="h6">Iniciar Sesión</Typography>
           </Button>

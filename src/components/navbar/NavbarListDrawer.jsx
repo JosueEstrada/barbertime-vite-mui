@@ -7,14 +7,16 @@ import {
   ListItemIcon,
   ListItemText,
 } from "@mui/material";
-import { Fragment } from "react";
+import { Fragment, useContext } from "react";
+import { AuthContext } from "../../context/AuthContext.jsx";
 
 export default function NavbarListDrawer({
-  isLoggedIn,
   navArrayLinks,
   NavLink,
   setIsOpen,
 }) {
+  const { isLogged, logIn, logOut } = useContext(AuthContext);
+
   return (
     <Box sx={{ width: 250, bgcolor: "#fdfdfd" }}>
       <nav>
@@ -22,13 +24,16 @@ export default function NavbarListDrawer({
           {navArrayLinks.map(
             (item) =>
               (typeof item.requiresAuth === "undefined" ||
-                item.requiresAuth === isLoggedIn) && (
+                item.requiresAuth === isLogged) && (
                 <Fragment key={item.id}>
                   <ListItem>
                     <ListItemButton
                       component={NavLink}
                       to={item.path}
-                      onClick={() => setIsOpen(false)}
+                      onClick={() => {
+                        setIsOpen(false);
+                        item.title === "Cerrar Sesión" ? logOut() : undefined;
+                      }}
                     >
                       <ListItemIcon>{item.icon}</ListItemIcon>
                       <ListItemText primary={item.title} />

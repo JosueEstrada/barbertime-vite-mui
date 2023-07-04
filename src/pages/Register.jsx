@@ -13,6 +13,12 @@ import { Link } from "react-router-dom";
 export default function Register() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [repassword, setRepassword] = useState("");
+  const [passwordError, setPasswordError] = useState({
+    error: false,
+    message: "",
+  });
+
   const [error, setError] = useState({
     error: false,
     message: "",
@@ -24,8 +30,33 @@ export default function Register() {
     return regex.test(String(email).toLowerCase());
   };
 
+  const handleRepasswordChange = (e) => {
+    setRepassword(e.target.value);
+    // If TextField is not empty and passwords do not match, show error
+    if (e.target.value !== "" && e.target.value !== password) {
+      setPasswordError({
+        error: true,
+        message: "Las contraseñas no coinciden",
+      });
+    } else {
+      setPasswordError({
+        error: false,
+        message: "",
+      });
+    }
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
+    // Check if passwords match
+    if (password !== repassword) {
+      setPasswordError({
+        error: true,
+        message: "Las contraseñas no coinciden",
+      });
+      return;
+    }
+
     if (validateEmail(email)) {
       setError({
         error: false,
@@ -42,6 +73,7 @@ export default function Register() {
     console.log({
       email: data.get("email"),
       password: data.get("password"),
+      repassword: data.get("repassword"),
     });
   };
 
@@ -99,6 +131,20 @@ export default function Register() {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             sx={{ mb: 2 }}
+          />
+          <TextField
+            id="repassword"
+            name="repassword"
+            label="Confirmar Contraseña"
+            variant="outlined"
+            autoComplete="current-password"
+            required
+            fullWidth
+            value={repassword}
+            onChange={handleRepasswordChange}
+            sx={{ mb: 2 }}
+            error={passwordError.error}
+            helperText={passwordError.message}
           />
 
           <Button

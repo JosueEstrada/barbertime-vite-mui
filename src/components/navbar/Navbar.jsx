@@ -8,14 +8,15 @@ import {
   Toolbar,
   Typography,
 } from "@mui/material";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
 import { NavLink } from "react-router-dom";
-
-const isLoggedIn = true;
+import { AuthContext } from "../../context/AuthContext.jsx";
 
 export default function Navbar({ navArrayLinks }) {
   const [isOpen, setIsOpen] = useState(false);
+
+  const { isLogged, logIn, logOut } = useContext(AuthContext);
   return (
     <>
       <AppBar position="sticky">
@@ -67,12 +68,13 @@ export default function Navbar({ navArrayLinks }) {
               {navArrayLinks.map(
                 (item) =>
                   (typeof item.requiresAuth === "undefined" ||
-                    item.requiresAuth === isLoggedIn) && (
+                    item.requiresAuth === isLogged) && (
                     <Button
                       color="inherit"
                       key={item.id}
                       component={NavLink}
                       to={item.path}
+                      onClick={() => (item.id === 7 ? logOut() : undefined)}
                       sx={{
                         marginRight: 1,
                         "&:hover": {
@@ -98,7 +100,6 @@ export default function Navbar({ navArrayLinks }) {
         sx={{ display: { xs: "flex", sm: "none" } }}
       >
         <NavbarListDrawer
-          isLoggedIn={isLoggedIn}
           navArrayLinks={navArrayLinks}
           NavLink={NavLink}
           setIsOpen={setIsOpen}
