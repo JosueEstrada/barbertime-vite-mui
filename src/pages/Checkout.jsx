@@ -98,33 +98,39 @@ export default function Checkout() {
 
   return (
     <Box>
+      <Typography variant="h4" fontWeight={"bold"} marginLeft={3} marginTop={3}>
+        Agendar Cita
+      </Typography>
       <Stack container justifyContent="center" alignItems={"center"}>
-        <Paper md={4} sx={{ margin: 2 }}>
-          <Typography variant="h5" fontWeight={"bold"}>
-            Fecha
-          </Typography>
-          <DateCalendar
-            openTo="day"
-            views={["year", "month", "day"]}
-            value={date}
-            onChange={setDate}
-            disablePast
-            maxDate={maxDate}
-          />
-        </Paper>
-        <Paper md={4} sx={{ margin: 2 }}>
-          <Typography variant="h5" fontWeight={"bold"}>
-            Hora
-          </Typography>
-          <TimePicker
-            openTo="hours"
-            views={["hours", "minutes"]}
-            value={time}
-            onChange={setTime}
-            minTime={dayjs().hour(8).minute(0)}
-            maxTime={dayjs().set("hour", 20)}
-          />
-        </Paper>
+        <Box display={"flex"} alignItems={"center"}>
+          <Paper md={4} sx={{ margin: 2 }}>
+            <Typography variant="h5" fontWeight={"bold"} align={"center"}>
+              Fecha
+            </Typography>
+            <DateCalendar
+              openTo="day"
+              views={["year", "month", "day"]}
+              value={date}
+              onChange={setDate}
+              disablePast
+              maxDate={maxDate}
+            />
+          </Paper>
+          <Paper md={4} sx={{ margin: 2 }}>
+            <Typography variant="h5" fontWeight={"bold"} align={"center"}>
+              Hora
+            </Typography>
+            <TimePicker
+              openTo="hours"
+              views={["hours", "minutes"]}
+              value={time}
+              onChange={setTime}
+              minTime={dayjs().hour(8).minute(0)}
+              maxTime={dayjs().set("hour", 20)}
+            />
+          </Paper>
+        </Box>
+
         <Alert severity={"success"}>
           {`Su próxima cita será el ${date.format(
             "DD/MM/YYYY"
