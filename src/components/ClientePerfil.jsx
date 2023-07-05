@@ -14,6 +14,9 @@ export default function ClientePerfil() {
         <ClienteCard />
       </Grid>
       <Grid item>
+        <Typography variant={"h5"}>Opiniones</Typography>
+      </Grid>
+      <Grid item>
         <OpinionCard />
       </Grid>
       <Grid item>

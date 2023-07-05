@@ -9,6 +9,32 @@ import { useState } from "react";
 export default function Barberias() {
   const { barberias, loading, isEmpty } = useBarberiasState();
   const [coordinates, setCoordinates] = useState(null);
+  const barberiasDefault = [
+    {
+      nombreBarberia: "Barberia Cappone",
+      direccionBarberia: "Calle Schell 450",
+    },
+    {
+      nombreBarberia: "Barbaric Barber Shop & Club",
+      direccionBarberia: "Av. Javier Prado Este 6520",
+    },
+    {
+      nombreBarberia: "Good Fella's Barbershop Perú",
+      direccionBarberia: "Av La Marina 3285",
+    },
+    {
+      nombreBarberia: "Barbería Barba Negra",
+      direccionBarberia: "Calle Colón 185",
+    },
+    {
+      nombreBarberia: "El Turco",
+      direccionBarberia: "Av. San Martín 662",
+    },
+    {
+      nombreBarberia: "Barbería Perú Style",
+      direccionBarberia: "Av. Arnaldo Márquez 1263",
+    },
+  ];
 
   return (
     <>
@@ -27,6 +53,9 @@ export default function Barberias() {
                 barberia={barberia}
                 setCoordinates={setCoordinates}
               />
+            ))}
+            {barberiasDefault.map((barberiaDefault) => (
+              <BarberiaCard key={barberiaDefault} barberia={barberiaDefault} />
             ))}
           </Box>
         </Grid>

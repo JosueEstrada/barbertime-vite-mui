@@ -10,7 +10,7 @@ export default function ClienteCard({
   contenidoFotoCliente = "https://i.pravatar.cc/200",
 }) {
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ maxWidth: 345 }} elevation={10} sx={{ marginBottom: 3 }}>
       <CardMedia
         component="img"
         height="140"
@@ -20,6 +20,12 @@ export default function ClienteCard({
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
           {nombreCliente} {apellidoCliente}
+        </Typography>
+        <Typography gutterBottom variant="body1" component="div">
+          Servicios adquiridos: 5
+        </Typography>
+        <Typography gutterBottom variant="body1" component="div">
+          Opiniones realizadas: 3
         </Typography>
       </CardContent>
     </Card>

@@ -10,12 +10,12 @@ import Rating from "@mui/material/Rating";
 export default function OpinionCard({
   fotoCliente = "https://i.pravatar.cc/100",
   barberiaNombre = "FISI BarberShop!",
-  clienteNombre = "Cliente Disconforme",
+  clienteNombre = "John Doe",
   ratingValue = 1.5,
   opinionMessage = "Extremadamente descontento. Corte desigual, atención apresurada y ambiente incómodo. ¡No volveré a este barbero de nuevo!",
 }) {
   return (
-    <Card sx={{ maxWidth: "400px" }}>
+    <Card elevation={10} sx={{ maxWidth: "400px", marginTop: 3 }}>
       <CardHeader
         avatar={<Avatar src={fotoCliente}></Avatar>}
         title={barberiaNombre}
