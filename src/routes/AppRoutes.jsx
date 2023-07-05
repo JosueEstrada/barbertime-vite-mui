@@ -8,7 +8,6 @@ import Citas from "../pages/Citas.jsx";
 import NotFound from "../pages/NotFound.jsx";
 import Config from "../pages/Config.jsx";
 import Logout from "../pages/Logout.jsx";
-import TestPage from "../pages/TestPage.jsx";
 import Recuperar from "../pages/Recuperar.jsx";
 import Servicios from "../pages/Servicios.jsx";
 import Checkout from "../pages/Checkout.jsx";
@@ -27,6 +26,6 @@ export const AppRoutes = () => (
     <Route path="/servicios" element={<Servicios />} />
     <Route path="/checkout" element={<Checkout />} />
     <Route path="*" element={<NotFound />} />
-    <Route path="/test" element={<TestPage />} />
+    {/*<Route path="/test" element={<TestPage />} />*/}
   </Routes>
 );
