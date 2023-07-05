@@ -7,7 +7,7 @@ import {
   ListItem,
   ListItemText,
 } from "@mui/material";
-import { DatePicker, TimePicker } from "@mui/x-date-pickers";
+import { DateCalendar, TimePicker } from "@mui/x-date-pickers";
 import Stack from "@mui/material/Stack";
 import Alert from "@mui/material/Alert";
 import { useState } from "react";
@@ -100,8 +100,10 @@ export default function Checkout() {
     <Box>
       <Stack container justifyContent="center" alignItems={"center"}>
         <Paper md={4} sx={{ margin: 2 }}>
-          <Typography variant="h5">Fecha</Typography>
-          <DatePicker
+          <Typography variant="h5" fontWeight={"bold"}>
+            Fecha
+          </Typography>
+          <DateCalendar
             openTo="day"
             views={["year", "month", "day"]}
             value={date}
@@ -111,7 +113,9 @@ export default function Checkout() {
           />
         </Paper>
         <Paper md={4} sx={{ margin: 2 }}>
-          <Typography variant="h5">Hora</Typography>
+          <Typography variant="h5" fontWeight={"bold"}>
+            Hora
+          </Typography>
           <TimePicker
             openTo="hours"
             views={["hours", "minutes"]}
