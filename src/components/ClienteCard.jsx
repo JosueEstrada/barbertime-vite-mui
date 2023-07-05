@@ -10,7 +10,7 @@ export default function ClienteCard({
   contenidoFotoCliente = "https://i.pravatar.cc/200",
 }) {
   return (
-    <Card sx={{ maxWidth: 345 }} elevation={10} sx={{ marginBottom: 3 }}>
+    <Card sx={{ maxWidth: 345, marginBottom: 3 }} elevation={10}>
       <CardMedia
         component="img"
         height="140"
