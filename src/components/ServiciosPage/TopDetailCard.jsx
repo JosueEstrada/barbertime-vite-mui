@@ -5,10 +5,10 @@ export default function TopDetailCard() {
     <Grid container sx={{ margin: 1, marginLeft: 3 }}>
       <Grid item>
         <Typography variant="h4" gutterBottom>
-          {"barber.nombreBarberia"}
+          {"Barberia Carppone"}
         </Typography>
         <Typography variant="body2" color="textSecondary">
-          {"barber.direccionBarberia"}
+          {"Calle Schell 450"}
         </Typography>
       </Grid>
     </Grid>
