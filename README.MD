@@ -1,5 +1,5 @@
 # Proyecto Barbería - Aplicación Web
-![](C:\Users\josue\WebstormProjects\mui-vite-app\src\assets\img\ScreenshotHome.png)
+![](src/assets/img/ScreenshotHome.png)
 <!-- TOC -->
 * [Proyecto Barbería - Aplicación Web](#proyecto-barbería---aplicación-web)
   * [Tecnologías Utilizadas](#tecnologías-utilizadas)
