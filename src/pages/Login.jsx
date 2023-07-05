@@ -104,7 +104,7 @@ export default function Login() {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             sx={{ mb: 2 }}
-          />
+            type={"password"}/>
 
           <Button
             type="submit"
