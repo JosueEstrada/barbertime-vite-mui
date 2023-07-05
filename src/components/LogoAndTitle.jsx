@@ -1,4 +1,5 @@
 import { Box, Grid, Typography } from "@mui/material";
+import imgLogo500 from "../assets/img/logo500.png";
 
 export default function LogoAndTitle() {
   return (
@@ -10,11 +11,7 @@ export default function LogoAndTitle() {
         sx={{ padding: 5 }}
       >
         <Grid item>
-          <img
-            src="src/assets/img/logo500.png"
-            alt="logo"
-            style={{ width: "150px" }}
-          />
+          <img src={imgLogo500} alt="logo" style={{ width: "150px" }} />
         </Grid>
         <Grid item>
           <Typography

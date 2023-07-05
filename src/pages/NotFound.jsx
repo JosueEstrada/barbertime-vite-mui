@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import { useNavigate, Navigate, Link, NavLink } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { Box, Button, Paper, Typography } from "@mui/material";
+import img404 from "../assets/img/404.jpg";
 
 export default function NotFound() {
   const navigate = useNavigate();
@@ -45,7 +46,7 @@ export default function NotFound() {
           PÁGINA NO ENCONTRADA
         </Typography>
         <img
-          src={"src/assets/img/404.jpg"}
+          src={img404}
           alt={"Imagen de Error 404 Página no encontrada"}
           width={"200"}
         />

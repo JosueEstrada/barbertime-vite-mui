@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Box, Button, Container, Typography } from "@mui/material";
+import imgLogout from "../assets/img/logout.jpg";
 
 export default function Logout() {
   const [counter, setCounter] = useState(10);
@@ -39,7 +40,11 @@ export default function Logout() {
         >
           ¡Hasta pronto!
         </Typography>
-        <img src={"src/assets/img/logout.jpg"} width={150} />
+        <img
+          src={imgLogout}
+          width={150}
+          alt={"Imagen de Aviso de Cierre de Sesión"}
+        />
 
         <Typography variant="h4" component="h2" align="center">
           Cerrando sesión en {counter}

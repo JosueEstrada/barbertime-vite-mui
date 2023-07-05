@@ -49,7 +49,7 @@ git clone https://github.com/JosueEstrada/barbertime-vite-mui.git
 2. Dirigirse a la carpeta del proyecto
 
 ````shell
-cd mui-vite-app
+cd barbertime-vite-mui
 ````
 
 3. Instalar las dependencias

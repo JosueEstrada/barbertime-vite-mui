@@ -12,6 +12,7 @@ import { useContext, useState } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
 import { NavLink } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext.jsx";
+import imgLogoTitle from "../../assets/img/logoTitle.png";
 
 export default function Navbar({ navArrayLinks }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -52,7 +53,7 @@ export default function Navbar({ navArrayLinks }) {
               }}
               startIcon={
                 <img
-                  src="src/assets/img/logoTitle.png"
+                  src={imgLogoTitle}
                   alt="Barbertime"
                   width="32"
                   style={{ filter: "brightness(0) invert(1)" }}
