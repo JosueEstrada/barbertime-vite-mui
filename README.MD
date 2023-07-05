@@ -1,5 +1,5 @@
 # Proyecto Barbería - Aplicación Web
-
+![](C:\Users\josue\WebstormProjects\mui-vite-app\src\assets\img\ScreenshotHome.png)
 <!-- TOC -->
 * [Proyecto Barbería - Aplicación Web](#proyecto-barbería---aplicación-web)
   * [Tecnologías Utilizadas](#tecnologías-utilizadas)
@@ -44,7 +44,7 @@ visibilidad.
 
 1. Clonar el repositorio a tu local
 ````shell
-git clone ...
+git clone https://github.com/JosueEstrada/barbertime-vite-mui.git
 ```` 
 2. Dirigirse a la carpeta del proyecto
 

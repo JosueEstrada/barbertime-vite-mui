@@ -3,7 +3,7 @@ import { Facebook, Instagram, Twitter } from "@mui/icons-material";
 
 export default function Footer() {
   return (
-    <Box mt={5}>
+    <Box mt={2}>
       <Container>
         <Grid container spacing={5}>
           <Grid item xs={12} sm={4}>
@@ -69,7 +69,7 @@ export default function Footer() {
           </Grid>
         </Grid>
 
-        <Box mt={5}>
+        <Box mt={2}>
           <Typography variant="body2" align="center">
             {"Copyright © BugFund | "}
             {new Date().getFullYear()}
