@@ -10,19 +10,9 @@ export default function Servicios() {
 
   return (
     <>
-      <Paper
-        elevation={5}
-        sx={{
-          marginLeft: 3,
-          marginTop: 3,
-          width: "fit-content",
-          padding: 1,
-        }}
-      >
-        <Typography variant="h2" sx={{ fontWeight: "bold" }}>
-          Servicios
-        </Typography>
-      </Paper>
+      <Typography variant="h4" fontWeight={"bold"} marginLeft={3} marginTop={3}>
+        Servicios
+      </Typography>
       <BackButton />
       <TopDetailCard />
       <Grid container justifyContent="center">

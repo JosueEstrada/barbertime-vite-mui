@@ -1,6 +1,6 @@
 import BarberiaCard from "../components/BarberiaCard.jsx";
 import MapView from "../components/MapView.jsx";
-import { Grid, Box } from "@mui/material";
+import { Grid, Box, Typography } from "@mui/material";
 import PaginationButtons from "../components/PaginationButtons.jsx";
 import SearchBar from "../components/SearchBar.jsx";
 import { useBarberiasState } from "../hooks/useBarberiasState.jsx";
@@ -12,6 +12,9 @@ export default function Barberias() {
 
   return (
     <>
+      <Typography variant="h4" fontWeight={"bold"} marginLeft={3} marginTop={3}>
+        Buscar Barberías
+      </Typography>
       <SearchBar />
       <Grid container>
         <Grid item md={7}>

@@ -1,7 +1,11 @@
+import { Typography } from "@mui/material";
+
 export default function Citas() {
   return (
     <>
-      <h1>Citas</h1>
+      <Typography variant="h4" fontWeight={"bold"} marginLeft={3} marginTop={3}>
+        Citas
+      </Typography>
     </>
   );
 }
