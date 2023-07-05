@@ -1,5 +1,5 @@
 import axios from "axios";
-import { TextField, Button } from "@mui/material";
+import { TextField, Button, Grid } from "@mui/material";
 import { useEffect, useState } from "react";
 
 export default function ClienteConfig() {
@@ -27,31 +27,52 @@ export default function ClienteConfig() {
   };
 
   return (
-    <>
-      <TextField
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-        label="Nombre"
-      />
-      <TextField
-        value={lastname}
-        onChange={(e) => setLastname(e.target.value)}
-        label="Apellido"
-      />
-      <TextField
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        label="Correo electrónico"
-      />
-      <TextField
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-        label="Contraseña"
-        type="password"
-      />
-      <Button onClick={handleSave} variant="contained">
-        Guardar
-      </Button>
-    </>
+    <Grid
+      container
+      spacing={2}
+      alignItems="center"
+      justifyContent="center"
+      width={"350px"}
+      marginLeft={3}
+    >
+      <Grid item xs={12}>
+        <TextField
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          label="Nombre"
+          fullWidth
+        />
+      </Grid>
+      <Grid item xs={12}>
+        <TextField
+          value={lastname}
+          onChange={(e) => setLastname(e.target.value)}
+          label="Apellido"
+          fullWidth
+        />
+      </Grid>
+      <Grid item xs={12}>
+        <TextField
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          label="Correo electrónico"
+          fullWidth
+        />
+      </Grid>
+      <Grid item xs={12}>
+        <TextField
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          label="Contraseña"
+          type="password"
+          fullWidth
+        />
+      </Grid>
+      <Grid item xs={12}>
+        <Button onClick={handleSave} variant="contained">
+          Guardar
+        </Button>
+      </Grid>
+    </Grid>
   );
 }
